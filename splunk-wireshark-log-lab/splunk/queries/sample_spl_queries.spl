@@ -1,0 +1,20 @@
+# Failed logons by source IP, last 24 hours
+index=main sourcetype=WinEventLog:Security EventCode=4625
+| stats count by src_ip, user
+| sort -count
+
+# Failed logon followed by successful logon (possible brute force)
+index=main sourcetype=WinEventLog:Security (EventCode=4625 OR EventCode=4624)
+| transaction user maxspan=10m
+| where mvcount(EventCode)>1 AND mvfind(EventCode,"4624")>0 AND mvfind(EventCode,"4625")>0
+
+# Top talkers by bytes transferred
+index=main sourcetype=stream:tcp
+| stats sum(bytes) as total_bytes by src_ip, dest_ip
+| sort -total_bytes
+| head 20
+
+# New process creation events (Sysmon Event ID 1)
+index=main sourcetype=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational EventCode=1
+| table _time, Computer, User, Image, ParentImage, CommandLine
+| sort -_time

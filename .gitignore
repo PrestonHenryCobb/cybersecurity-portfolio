@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Splunk/Wireshark lab data (excluded from version control — may contain sensitive or large data)
+splunk-wireshark-log-lab/wireshark/captures/*.pcap
+splunk-wireshark-log-lab/wireshark/captures/*.pcapng
+splunk-wireshark-log-lab/**/*.log
+splunk-wireshark-log-lab/**/raw_exports/
+
+# General
+*.zip
+*.tmp
