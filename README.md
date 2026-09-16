@@ -1,71 +1,22 @@
-# CKAD Lab: ReplicaSets
+> # Cybersecurity Portfolio
 
-Part of my hands-on CKAD prep (KodeKloud labs), rewritten in my own words as portfolio documentation.
+Hands-on cybersecurity projects documenting my transition into a SOC analyst / defensive security career. Built alongside CompTIA Security+ study and home-lab practice. Active project updates will be posted here.
 
-## 🎯 Scenario
+> ## Projects
 
-> Describe the lab scenario in your own words — don't copy KodeKloud's question text verbatim.
->
-> Example: "Create a ReplicaSet that maintains N replicas of a pod running [image]. Then simulate a failure and observe how the ReplicaSet self-heals."
+### 1. [AI Tier 1 SOC Analyst Agent](./soc-tier1-ai-agent)
+Made to assist my labs, An AI assistant designed to perform initial triage the way a Tier 1 SOC analyst would identifying alert types, extracting indicators of compromise, mapping behavior to MITRE ATT&CK, and recommending investigation/escalation steps. The AI Agent is used for ***Solely*** triage and operates only to assist a ***Human analyst*** in final decision making. Includes the agent's system instructions and a plaintext knowledge base.
 
-**What I was asked to do:**
-- [ ] Fill in objective 1 (e.g., create a ReplicaSet manifest with X replicas)
-- [ ] Fill in objective 2 (e.g., update the replica count)
-- [ ] Fill in objective 3 (e.g., delete a pod and observe self-healing)
+### 2. [Splunk & Wireshark Log Capture Lab](./splunk-wireshark-log-lab)
+A home lab for capturing, analyzing, and investigating network traffic and logs using Wireshark and Splunk; covering packet analysis, SPL query writing, and incident investigation workflows.
 
-## 🧠 Key Concepts Covered
+### 3. [CKAD Labs]
 
-- What a ReplicaSet is and how it differs from a bare Pod / a Deployment
-- `selector` / `matchLabels` and why they must match the pod template's labels
-- How the ReplicaSet controller reconciles desired vs. actual state
+> ## About
+- **Author:** Preston Cobb
+- **Focus:** Blue team | Cloud (Azure) | Kubernetes
+- **Certifications:** CompTIA Security+ (Aug 2026) | CKAD (exp. Nov 2026)
+- **Currently studying:** Kubernetes (CKAD → CKA), cloud security fundamentals
 
-## 🛠️ What I Did
-
-### 1. Wrote the manifest
-
-See [`manifests/replicaset.yaml`](manifests/replicaset.yaml).
-
-```bash
-kubectl apply -f manifests/replicaset.yaml
-```
-
-### 2. Verified it came up
-
-```bash
-kubectl get rs
-kubectl get pods -l app=<fill-in-label>
-```
-
-**Output:**
-```
-# paste your actual terminal output here
-```
-
-### 3. Simulated failure / scaling
-
-```bash
-# e.g. kubectl delete pod <pod-name>
-# e.g. kubectl scale rs <rs-name> --replicas=5
-```
-
-**What happened:**
-> Describe what you observed — did a new pod get scheduled automatically? How fast? Did labels/selectors cause any mismatch errors?
-
-## 🐛 What Tripped Me Up
-
-> This is the most valuable section for anyone reading — be specific and honest.
->
-> Example: "I initially set the selector's `matchLabels` to `app: web` but the pod template's labels were `app: webapp` — the ReplicaSet came up with 0 pods and no error, just silently failed to match. Took me a few minutes of `kubectl describe rs` to catch the mismatch."
-
-## ✅ What I'd Do Differently / Takeaways
-
-- Takeaway 1
-- Takeaway 2
-
-## 🎥 Video Walkthrough
-
-> [Link to unlisted YouTube video, if you recorded one]
-
-## 📁 Files
-
-- [`manifests/replicaset.yaml`](manifests/replicaset.yaml) — the ReplicaSet manifest used in this lab
+>> ## License
+MIT - see [LICENSE](./LICENSE)
