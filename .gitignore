@@ -15,3 +15,6 @@ splunk-wireshark-log-lab/**/raw_exports/
 # General
 *.zip
 *.tmp
+**/NOTES.md
+.DS_Store
+
