@@ -1,6 +1,6 @@
 # Kubernetes Lab: ReplicaSets and Pods
 
-Lab write-up covering inspection of an existing ReplicaSet, fixing a ReplicaSet whose pods could not start, creating ReplicaSets from two broken definition files, and cleanup.
+Solutions to fixing a mis-configured replicaset with incorrect pod setups. Includes incorrect commands I sent, vi edits and successful commands.
 
 ## Contents
 
