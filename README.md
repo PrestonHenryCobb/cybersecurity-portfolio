@@ -1,6 +1,6 @@
 > # Cybersecurity Portfolio
 
-Hands-on cybersecurity projects documenting my transition into a SOC analyst / defensive security career. Built alongside CompTIA Security+ study and home-lab practice. Active project updates will be posted here.
+Hands-on cybersecurity projects documenting my transition into a cybersecurity career. Built alongside CompTIA Security+ and Kubernetes CKAD study. Active project updates will be posted here.
 
 > ## Projects
 
@@ -11,7 +11,7 @@ Made to assist my labs, An AI assistant designed to perform initial triage the w
 A home lab for capturing, analyzing, and investigating network traffic and logs using Wireshark and Splunk; covering packet analysis, SPL query writing, and incident investigation workflows.
 
 ### 3. [CKAD Labs](./ckad-labs)
-Solutions to the CKAD concepts essential to my exam hands-on study.
+CKAD write-ups as proof of study during my time studying for the CKAD exam.
 
 ## Disclaimer
 Folders in this repo that are work-in-progress are formatted as such, using language to indicate what's done and what isn't.
