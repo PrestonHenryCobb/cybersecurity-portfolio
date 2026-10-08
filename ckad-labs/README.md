@@ -6,7 +6,7 @@ Lab writeups from CKAD (Certified Kubernetes Application Developer) prep, using 
 
 | # | Section | Status |
 |---|---|---|
-| 1 | [Core Concepts](./01-core-concepts) | In progress |
+| 1 | [Core Concepts](./01-core-concepts) | In progress (ReplicaSets, Deployments, Namespaces done) |
 | 2 | [Multi-Container Pods](./02-multi-container-pods) | Not started |
 | 3 | [Observability](./03-observability) | Not started |
 | 4 | [Configuration](./04-configuration) | Not started |

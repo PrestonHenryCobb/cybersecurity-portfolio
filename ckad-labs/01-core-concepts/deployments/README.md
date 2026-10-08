@@ -49,7 +49,13 @@ kubectl create deploy httpd-frontend --image=httpd:2.4-alpine
 kubectl edit deploy httpd-frontend
 ```
 
-`kubectl edit` was used afterward to bring the deployment in line with the full required spec (replicas, etc.) beyond what the imperative create command alone sets.
+`kubectl create deploy` with only `--image` produces 1 replica, so `kubectl edit` was used afterward to set `spec.replicas: 3`, giving the required 3/3. The same result can be had in one step, or by scaling afterward:
+
+```bash
+kubectl create deploy httpd-frontend --image=httpd:2.4-alpine --replicas=3
+# or, on the already-created deployment:
+kubectl scale deploy httpd-frontend --replicas=3
+```
 
 ## Outcome
 
@@ -67,6 +73,15 @@ httpd-frontend        3/3     3            3           98s
 ```
 
 `deployment-1` and `httpd-frontend` both reached full ready state. `frontend-deployment` was left at 0/4 — that one was the pre-existing broken deployment being investigated (bad image name), not something the lab asked to be fixed.
+
+For reference, the fix (not performed in this lab) would be to correct the image on the Deployment's Pod template, which triggers a rolling update that replaces the broken Pods:
+
+```bash
+kubectl set image deploy/frontend-deployment <container-name>=busybox
+# or: kubectl edit deploy frontend-deployment
+```
+
+Unlike a bare ReplicaSet (see the ReplicaSets lab, where the old Pods had to be deleted by hand), a Deployment rolls out the new template automatically.
 
 ## Commands I Got Wrong
 
