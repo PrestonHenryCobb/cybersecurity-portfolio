@@ -1,0 +1,10 @@
+# Declarative equivalent of: kubectl run redis --image=redis -n finance
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis
+  namespace: finance
+spec:
+  containers:
+    - name: redis
+      image: redis

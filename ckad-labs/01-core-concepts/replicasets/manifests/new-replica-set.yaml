@@ -1,0 +1,20 @@
+# Reconstructed from the lab writeup (kubectl describe output + the image fix);
+# the original lab file was not saved, so metadata beyond what describe showed is minimal.
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: new-replica-set
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      name: busybox-pod
+  template:
+    metadata:
+      labels:
+        name: busybox-pod
+    spec:
+      containers:
+        - name: busybox-container
+          image: busybox            # was busybox777 (nonexistent) in the broken original
+          command: ["sh", "-c", "echo Hello Kubernetes! && sleep 3600"]

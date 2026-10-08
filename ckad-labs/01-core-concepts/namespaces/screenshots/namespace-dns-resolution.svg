@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title>Namespace DNS resolution for redis-db-service</title>
+  <rect width="760" height="400" fill="#ffffff"/>
+  <text x="380" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1a1a1a">Resolving redis-db-service from the blue Pod (marketing namespace)</text>
+
+  <!-- marketing namespace -->
+  <rect x="30" y="55" width="330" height="290" rx="10" fill="#eaf3ff" stroke="#2f6fb5" stroke-width="2"/>
+  <text x="45" y="80" font-weight="bold" fill="#1d4f86">namespace: marketing</text>
+  <rect x="55" y="105" width="130" height="50" rx="6" fill="#ffffff" stroke="#2f6fb5"/>
+  <text x="120" y="135" text-anchor="middle" fill="#1a1a1a">Pod: blue</text>
+  <rect x="55" y="250" width="280" height="60" rx="6" fill="#ffffff" stroke="#2f6fb5"/>
+  <text x="195" y="276" text-anchor="middle" fill="#1a1a1a">Service: redis-db-service</text>
+  <text x="195" y="296" text-anchor="middle" fill="#555555" font-size="12">port 6379</text>
+
+  <!-- dev namespace -->
+  <rect x="400" y="55" width="330" height="290" rx="10" fill="#fff4e5" stroke="#c77d1a" stroke-width="2"/>
+  <text x="415" y="80" font-weight="bold" fill="#8a540b">namespace: dev</text>
+  <rect x="425" y="250" width="280" height="60" rx="6" fill="#ffffff" stroke="#c77d1a"/>
+  <text x="565" y="276" text-anchor="middle" fill="#1a1a1a">Service: redis-db-service</text>
+  <text x="565" y="296" text-anchor="middle" fill="#555555" font-size="12">port 6379</text>
+
+  <!-- same-namespace arrow -->
+  <line x1="120" y1="155" x2="120" y2="245" stroke="#2f6fb5" stroke-width="2.5"/>
+  <polygon points="120,249 114,237 126,237" fill="#2f6fb5"/>
+  <text x="132" y="190" fill="#1d4f86" font-weight="bold">redis-db-service</text>
+  <text x="132" y="208" fill="#555555" font-size="12">same namespace: bare name</text>
+
+  <!-- cross-namespace arrow -->
+  <path d="M185 130 H565 V245" fill="none" stroke="#c77d1a" stroke-width="2.5"/>
+  <polygon points="565,249 559,237 571,237" fill="#c77d1a"/>
+  <text x="375" y="104" text-anchor="middle" fill="#8a540b" font-weight="bold" font-size="13">redis-db-service.dev.svc.cluster.local</text>
+  <text x="375" y="122" text-anchor="middle" fill="#555555" font-size="12">other namespace: add .dev</text>
+
+  <text x="380" y="378" text-anchor="middle" fill="#555555" font-size="12">Diagram drawn for this writeup. Not a terminal capture.</text>
+</svg>
