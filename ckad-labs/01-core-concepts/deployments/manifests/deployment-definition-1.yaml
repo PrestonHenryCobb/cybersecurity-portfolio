@@ -1,17 +1,22 @@
+# Reconstructed: the original lab file was not saved.
+# Known from the lab: name deployment-1, 2 replicas (2/2 ready), and the only fix
+# needed was kind "deployment" -> "Deployment". Label, container name, image, and
+# command below are representative values, not the lab's originals.
 apiVersion: apps/v1
 kind: Deployment                 # was lowercase "deployment" in the original file — fixed
 metadata:
   name: deployment-1
 spec:
-  replicas: <fill-in>
+  replicas: 2
   selector:
     matchLabels:
-      app: <fill-in-label>       # must match template labels below
+      name: busybox-pod          # must match template labels below
   template:
     metadata:
       labels:
-        app: <fill-in-label>
+        name: busybox-pod
     spec:
       containers:
-        - name: <fill-in-container-name>
-          image: <fill-in-image>
+        - name: busybox-container
+          image: busybox
+          command: ["sh", "-c", "echo Hello Kubernetes! && sleep 3600"]

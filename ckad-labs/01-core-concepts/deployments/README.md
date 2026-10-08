@@ -80,5 +80,5 @@ httpd-frontend        3/3     3            3           98s
 
 ## Files
 
-- `manifests/deployment-definition-1.yaml` — corrected version of the provided file (kind fixed to `Deployment`)
+- `manifests/deployment-definition-1.yaml` — reconstructed version of the provided file (original not saved; `kind` fixed to `Deployment`, other values representative)
 - `manifests/httpd-frontend-deployment.yaml` — equivalent declarative manifest for the imperatively-created `httpd-frontend` deployment, for reference
